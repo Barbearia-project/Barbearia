@@ -1,0 +1,45 @@
+/* Estiliza o header */
+#Header {
+    background-color:#2a2a2a; /* Cor de fundo do cabeçalho */
+    padding: 15px 0; /* Espaçamento interno no cabeçalho */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para o cabeçalho */
+}
+
+/* Estiliza a lista de navegação */
+.nav-links {
+    display: flex;
+    justify-content: center; /* Centraliza os itens na horizontal */
+    color: white;
+}
+
+.nav-list {
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex; /* Exibe os itens em linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estiliza os links de navegação */
+.nav-link {
+    color: #ffffff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 16px;
+    padding: 10px 15px; /* Espaçamento ao redor dos links */
+    border-radius: 5px; /* Arredonda os cantos dos links */
+    transition: background-color 0.3s ease; /* Efeito suave de hover */
+}
+
+.nav-link:hover {
+    background-color: #1a73e8; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+.nav-item i {
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+    color: #f7d774; /* Cor dos ícones */
+}
+.nav .ul .li{
+    color: white;
+}
