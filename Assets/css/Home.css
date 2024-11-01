@@ -1,5 +1,5 @@
 :root {
-    --primary-bg-color: #1d1c1ce5;
+    --primary-bg-color: #292929;
     --primary-text-color: #ffffff;    /* Cor escura para texto geral */
     /* Nova variável para texto do header */
     --accent-color: #945e2cc5;
@@ -18,7 +18,7 @@
 /* Estilos do Header com acessibilidade e responsividade */
 #header {
     background-color: var(--primary-bg-color);
-    padding: 1rem 0;
+    padding: 0.3rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -82,6 +82,7 @@
 .nav-item i {
     color: var(--icon-color);
     transition: color var(--transition-speed) ease;
+
 }
 
 .nav-link:hover i,
@@ -150,4 +151,59 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+.footer{
+
+    background-color: var(--primary-bg-color);
+    text-align: center;
+    color: var(--primary-text-color);
+    padding-top: 1rem;
+    padding-bottom: 1.3rem;
+
+}
+
+.footer-links a{
+
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+.footer-links :hover{
+
+    color: #f08f11;
+    text-decoration: none;
+
+}
+
+.about{
+
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+
+}
+
+.about-text{
+
+    text-align: left;
+    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #ffffff;
+    color: black;
+
+}
+
+.about-text-left{
+
+    padding-left: 250px;
+
+}
+
+.display-right{
+
+    padding-left: 32rem;
 }
