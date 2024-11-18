@@ -1,22 +1,54 @@
+
 :root {
+    
     --primary-bg-color: #292929;
     --primary-text-color: #ffffff;    /* Cor escura para texto geral */
     /* Nova variável para texto do header */
-    --accent-color: #945e2cc5;
-    --icon-color: #f08f11;
-    --hover-bg-color: hsla(29, 76%, 21%, 0.801);
+    --accent-color: #741313;
+    --icon-color: #891a1a;
+    --hover-bg-color: #74131381;
     --transition-speed: 0.3s;
+
+}
+
+#myBtn {
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border: none;
+    background-color: rgb(66, 66, 66);
+    color: var(--primary-text-color);
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+
+}
+  
+#myBtn:hover {
+
+    background-color: #555;
+
 }
 
 /* Reset de estilos para garantir consistência entre navegadores */
 * {
+   
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 /* Estilos do Header com acessibilidade e responsividade */
 #header {
+    
     background-color: var(--primary-bg-color);
     padding: 0.3rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -24,31 +56,43 @@
     top: 0;
     z-index: 100;
     width: 100%;
+
+}
+
+.navbar-brand {
+   
+    color: var(--primary-text-color)!important;
+
 }
 
 /* Navegação responsiva */
 .nav-links {
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--header-text-color-text-color);
+    color: var(--primary-text-color);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+
 }
 
 .nav-list {
+    
     list-style: none;
     display: flex;
     gap: 1.25rem;
     align-items: center;
     flex-wrap: wrap;
     color: var(--primary-text-color);
+
 }
 
 /* Links de navegação com estados interativos */
 .nav-link {
-    color: var(--primary-text-color);
+    
+    color: #d6d6d6!important;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -61,36 +105,46 @@
     display: flex;
     align-items: center;
     gap: 0.3125rem;
+
 }
 
 .nav-link:hover,
 .nav-link:focus {
+   
     background-color: var(--hover-bg-color);
     color: var(--primary-text-color);
     transform: scale(1.05);
     outline: 2px solid var(--accent-color);
+
 }
 
 /* Acessibilidade para estados ativos e foco */
 .nav-link:active,
 .nav-link:focus-visible {
+    
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
+
 }
 
 /* Ícones com transição suave */
 .nav-item i {
+   
     color: var(--icon-color);
     transition: color var(--transition-speed) ease;
 
 }
 
+
 .nav-link:hover i,
 .nav-link:focus i {
+
     color: var(--primary-text-color);
+
 }
 
 #navbarNav{
+ 
     color: var(--primary-text-color);
 
 }
@@ -172,38 +226,132 @@
 
 .footer-links :hover{
 
-    color: #f08f11;
+    color: var(--icon-color);
     text-decoration: none;
 
 }
 
-.about{
-
-    padding: 1rem;
-    text-align: center;
+.about {
     background-color: var(--primary-bg-color);
+    padding: 1rem;
     color: var(--primary-text-color);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
 
 }
 
+
 .about-text{
 
+    display: flex;
     text-align: left;
     padding: 30px;
     padding-left: 60px;
     padding-right: 60px;
     background-color: #ffffff;
     color: black;
+    gap: 20px;
 
 }
 
 .about-text-left{
 
-    padding-left: 250px;
+    flex: 1;
+    padding-top: 10px;
 
 }
 
-.display-right{
+.about-text-down{
 
-    padding-left: 32rem;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    
+}
+
+.display-right {
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+
+}
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+
+    background-color: var(--icon-color) !important; /* Não tira esse importante, se não n funfa*/
+    border: var(--icon-color) !important;
+
+}
+
+.about-img{
+
+    width: 280px;
+    height: 280px;
+    margin-left: -30px;
+    
+}
+
+.logo_carousel {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem; /* Ajuste o espaçamento, se necessário */
+
+}
+
+.logo_carousel img {
+   
+    max-width: 8rem;
+    height: auto;
+   
+}
+
+.servicos {
+
+    background-image: url("/Assets/img/fundo_parede.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}
+
+
+.servico {
+
+    display: flex;
+    color: var(--primary-text-color);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid white;
+
+}
+
+.servico:last-child {
+
+    border-bottom: none;
+
+}
+
+.nome{
+
+    margin-left: 1rem;
+    font-size: 1.1rem;
+
+}
+
+.preco {
+
+    background-color: var(--icon-color);
+    color: var(--primary-text-color);
+    margin-right: 1rem;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+
 }
