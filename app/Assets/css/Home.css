@@ -313,7 +313,7 @@
 
 .servicos {
 
-    background-image: url("/Assets/img/fundo_parede.jpg");
+    background-image: url("../img/fundo_parede.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
