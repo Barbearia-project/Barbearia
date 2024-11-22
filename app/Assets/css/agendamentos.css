@@ -1,0 +1,62 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+h2 {
+    text-align: center;
+    color: #007bff;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+/* Lista de agendamentos */
+ul#listaAgendamentos {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Cada item da lista */
+ul#listaAgendamentos li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito hover em itens */
+ul#listaAgendamentos li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Informações de cada agendamento */
+ul#listaAgendamentos li br + br {
+    margin-bottom: 10px;
+}
+
+/* Texto */
+ul#listaAgendamentos li strong {
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    ul#listaAgendamentos li {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

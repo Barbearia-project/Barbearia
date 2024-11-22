@@ -1,5 +1,5 @@
 {
-    "liveServer.settings.port": 5501,
+    "liveServer.settings.port": 5502,
     "java.project.referencedLibraries": [
         "C:\\xampp\\tomcat\\lib\\lib/servlet-api.jar",
         "C:\\xampp\\tomcat\\lib\\javax.servlet-api-3.0.1.jar"
