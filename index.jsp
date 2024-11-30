@@ -1,1 +1,1 @@
-<% response.sendRedirect(request.getContextPath() + "/app/Views/hoome.html" ); %>
+<% response.sendRedirect(request.getContextPath() + "/app/Views/hoome.jsp" ); %>

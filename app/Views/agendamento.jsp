@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.sql.*" %>
+<%@ page language="java" import="javax.servlet.http.HttpSession" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +11,6 @@
 </head>
 <body>
 <h2>Formulário de Agendamento</h2>
-
 <%
     // Conexão com o banco de dados
     String database = "barba";
@@ -23,6 +23,10 @@
     PreparedStatement statement = null;
     ResultSet resultSet = null;
     ResultSet resultSetProf = null;
+
+    HttpSession sessao = request.getSession();
+    String nomeClienteSessao = (String) sessao.getAttribute("nomeUsuario");
+    String idClienteSessao = (String) sessao.getAttribute("id_cliente");
 
     try {
         Class.forName(driver);
@@ -39,25 +43,11 @@
         resultSetProf = statementProf.executeQuery();
 %>
 
-<form method="POST" action="../config/agenda.jsp">
-<!-- Campo Cliente -->
-<label for="cliente">Cliente:</label><br>
-<select id="cliente" name="id_cliente" required>
-    <option value="">Selecione um cliente</option>
-    <%
-        String idClienteBusca = "4";  // Exemplo: você pode definir o valor dinamicamente
-        String queryClientes = "SELECT id_cliente, nomeCliente FROM clientes WHERE id_cliente = ?";
-        PreparedStatement stmtClientes = connection.prepareStatement(queryClientes);
-        stmtClientes.setString(1, idClienteBusca);  // Definindo o valor para o parâmetro
-        ResultSet rsClientes = stmtClientes.executeQuery();
-        while (rsClientes.next()) { 
-    %>
-        <option value="<%= rsClientes.getInt("id_cliente") %>">
-            <%= rsClientes.getString("nomeCliente") %>
-        </option>
-    <% } rsClientes.close(); stmtClientes.close(); %>
-</select><br><br>
-
+<form action="../config/agenda.jsp" method="POST">
+    <!-- Campo Cliente -->
+    <label for="cliente">Cliente:</label><br>
+    <input type="text" id="cliente" name="nomeCliente" value="<%= nomeClienteSessao %>" readonly>
+    <input type="hidden" name="id_cliente" value="<%= idClienteSessao %>"><br><br>
 
     <!-- Campo Data -->
     <label for="data">Data:</label><br>

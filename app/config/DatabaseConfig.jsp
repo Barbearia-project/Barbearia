@@ -40,6 +40,13 @@
         int rowsInserted = statement.executeUpdate();
         if (rowsInserted > 0) {
             out.println("Dados gravados com sucesso<br>");
+            
+            // Criar sessão e salvar informações do usuário
+            HttpSession sessao = request.getSession();
+            sessao.setAttribute("nomeUsuario", v_nome);
+            sessao.setAttribute("emailUsuario", v_email);
+
+            // Redirecionar para a próxima página
             response.sendRedirect(request.getContextPath() + "/app/Views/login.html");
         }
     } catch (Exception e) {
@@ -53,4 +60,3 @@
         }
     }
 %>
-

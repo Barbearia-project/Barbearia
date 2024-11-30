@@ -6,12 +6,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Agendamentos</title>
+    <title>Meus Agendamentos</title>
 </head>
 <body>
-    <h2 style="text-align:center;">Lista de Agendamentos</h2>
+    <h2 style="text-align:center;">Meus Agendamentos</h2>
 
     <%
+        // Verificar sessão
+        HttpSession sessao = request.getSession(false);
+        if (sessao == null || sessao.getAttribute("emailUsuario") == null) {
+            response.sendRedirect("login.html");
+            return;
+        }
+
+        String emailUsuario = (String) sessao.getAttribute("emailUsuario");
+
         // Configurações do banco de dados
         String database = "barba";
         String url = "jdbc:mysql://localhost:3306/" + database + "?useSSL=false&serverTimezone=UTC";
@@ -29,16 +38,18 @@
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
 
-            // Consulta com JOIN para obter o nome do profissional
+            // Consulta com JOIN e filtro por email do cliente
             String sql = "SELECT agendamentos.horario, agendamentos.dataAgendada, " +
                          "clientes.nomeCliente, profissionais.nomeProfissional, " +
                          "servicos.tipoServico, servicos.preco, servicos.tempoEstimado " +
                          "FROM agendamentos " +
                          "INNER JOIN clientes ON agendamentos.id_cliente = clientes.id_cliente " +
                          "INNER JOIN profissionais ON agendamentos.id_profissional = profissionais.id_profissional " +
-                         "INNER JOIN servicos ON agendamentos.id_servico = servicos.id_servico";
+                         "INNER JOIN servicos ON agendamentos.id_servico = servicos.id_servico " +
+                         "WHERE clientes.emailCliente = ?";
 
             statement = connection.prepareStatement(sql);
+            statement.setString(1, emailUsuario);
             resultSet = statement.executeQuery();
 
             // Construir o JSON com os resultados
@@ -76,10 +87,14 @@
         // Função para exibir os agendamentos na lista
         function mostrarAgendamentos() {
             var lista = document.getElementById('listaAgendamentos');
+            if (agendamentos.length === 0) {
+                lista.innerHTML = "<li>Você não possui agendamentos.</li>";
+                return;
+            }
+            
             agendamentos.forEach(function(agendamento) {
                 var li = document.createElement('li');
-                li.innerHTML = "Cliente: " + agendamento.nomeCliente + "<br>" +
-                               "Data: " + agendamento.dataAgendada + "<br>" +
+                li.innerHTML = "Data: " + agendamento.dataAgendada + "<br>" +
                                "Horário: " + agendamento.horario + "<br>" +
                                "Tipo de Serviço: " + agendamento.tipoServico + "<br>" +
                                "Preço: R$ " + agendamento.preco + "<br>" +

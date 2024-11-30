@@ -1,3 +1,4 @@
+<%@ page language="java" import="javax.servlet.http.HttpSession" %>
 <%@ page language="java" import="java.sql.*" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
@@ -28,7 +29,7 @@
         connection = DriverManager.getConnection(url, username, password);
 
         // Verificar se o usuário existe
-        String sql = "SELECT * FROM clientes WHERE emailCliente = ? AND senha = ?";
+        String sql = "SELECT id_cliente, nomeCliente FROM clientes WHERE emailCliente = ? AND senha = ?";
         statement = connection.prepareStatement(sql);
         statement.setString(1, v_email);
         statement.setString(2, v_senha);
@@ -37,10 +38,17 @@
 
         // Validar o resultado da consulta
         if (resultSet.next()) {
-            out.println("<p style='color:green;'>Login realizado com sucesso! Bem-vindo, " + resultSet.getString("nomeCliente") + ".</p>"); // colocar na tela inicial
-            // Redirecionar para a página home (ou painel)
-            response.sendRedirect(request.getContextPath() + "/app/Views/hoome.html");
+            // Salvar informações do usuário na sessão
+            HttpSession sessao = request.getSession();
+            String idCliente = resultSet.getString("id_cliente");  // Pegando o id_cliente do banco
+            String nomeUsuario = resultSet.getString("nomeCliente");  // Pegando o nome do banco
 
+            sessao.setAttribute("id_cliente", idCliente);  // Definindo o id_cliente na sessão
+            sessao.setAttribute("nomeUsuario", nomeUsuario);
+            sessao.setAttribute("emailUsuario", v_email);      
+
+            // Redirecionar para a página home (ou painel)
+            response.sendRedirect(request.getContextPath() + "/app/Views/hoome.jsp");
         } else {
             out.println("<p style='color:red;'>Email ou senha incorretos.</p>");
             response.sendRedirect(request.getContextPath() + "/app/Views/login.html");
@@ -59,4 +67,3 @@
 %>
 <br>
 <a href="${pageContext.request.contextPath}/app/Views/login.html">Ir para a página de Login</a>
-
