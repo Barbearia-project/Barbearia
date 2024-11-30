@@ -2,8 +2,7 @@
 :root {
     
     --primary-bg-color: #292929;
-    --primary-text-color: #ffffff;    /* Cor escura para texto geral */
-    /* Nova variável para texto do header */
+    --primary-text-color: #ffffff; 
     --accent-color: #741313;
     --icon-color: #891a1a;
     --hover-bg-color: #74131381;
@@ -37,7 +36,6 @@
 
 }
 
-/* Reset de estilos para garantir consistência entre navegadores */
 * {
    
     margin: 0;
@@ -46,7 +44,6 @@
 
 }
 
-/* Estilos do Header com acessibilidade e responsividade */
 #header {
     
     background-color: var(--primary-bg-color);
@@ -65,7 +62,6 @@
 
 }
 
-/* Navegação responsiva */
 .nav-links {
     
     display: flex;
@@ -89,7 +85,6 @@
 
 }
 
-/* Links de navegação com estados interativos */
 .nav-link {
     
     color: #d6d6d6!important;
@@ -118,7 +113,6 @@
 
 }
 
-/* Acessibilidade para estados ativos e foco */
 .nav-link:active,
 .nav-link:focus-visible {
     
@@ -127,7 +121,6 @@
 
 }
 
-/* Ícones com transição suave */
 .nav-item i {
    
     color: var(--icon-color);
@@ -149,53 +142,66 @@
 
 }
 
-/* Carrossel responsivo e acessível */
 #carrossel {
+
     height: 100vh;
     max-height: 800px;
     width: 100%;
     overflow: hidden;
+
 }
 
 .carousel-item {
+
     height: 100vh;
     max-height: 800px;
+
 }
 
 .carousel-item img {
+
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
     transition: transform 0.5s ease;
+
 }
 
-/* Efeito de zoom sutil nas imagens do carrossel */
 .carousel-item img:hover {
+
     transform: scale(1.05);
+
 }
 
-/* Media Queries para responsividade */
 @media screen and (max-width: 768px) {
+
     .nav-list {
+
         flex-direction: column;
         align-items: center;
         gap: 0.625rem;
+
     }
 
     .nav-link {
+
         width: 100%;
         text-align: center;
         justify-content: center;
+
     }
 
     #carrossel {
+
         max-height: 50vh;
+
     }
+
 }
 
-/* Acessibilidade para leitores de tela */
 .sr-only {
+
     position: absolute;
     width: 1px;
     height: 1px;
@@ -205,6 +211,7 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+
 }
 
 .footer{
@@ -232,12 +239,14 @@
 }
 
 .about {
+
     background-color: var(--primary-bg-color);
     padding: 1rem;
     color: var(--primary-text-color);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
     position: relative;
     text-align: center;
+    
 
 }
 

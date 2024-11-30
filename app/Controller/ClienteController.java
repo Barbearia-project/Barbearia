@@ -14,6 +14,11 @@ public class ClienteController {
     }
 
     public boolean adicionarCliente(ClienteCadastro cadastro) throws SQLException {
+
+         if (emailJaExiste(cadastro.getEmail())) {
+        return false;
+        }
+        
         String sql = "INSERT INTO clientes (nome, email, senha, telefone) VALUES (?, ?, ?, ?)";
         
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {

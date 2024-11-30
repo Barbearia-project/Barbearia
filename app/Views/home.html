@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +25,28 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../Assets/img/favcon.avif">
+
+    <script type="text/javascript">
+        function showAlert() {
+            // Pega os parâmetros da URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var message = urlParams.get('message');
+            var tipo = urlParams.get('tipoMensagem');
+
+            if (message) {
+                // Exibe o alert com a mensagem
+                if (tipo === 'sucesso') {
+                    alert("Sucesso: " + message);
+                } else if (tipo === 'erro') {
+                    alert("Erro: " + message);
+                }
+            }
+        }
+    </script>
+
 </head>
 
-<body>
+<body onload="showAlert()">
     
     <button onclick="topFunction()" id="myBtn" title="Go to top"> ↑ </button>
 
@@ -83,7 +102,7 @@
                        
                             <li class="nav-item">
                        
-                                <a href="cadastro.html" class="nav-link">
+                                <a href="cadastro.jsp" class="nav-link">
                        
                                     <i class="bi bi-person-plus" aria-hidden="true"></i> Cadastre-se
                        
