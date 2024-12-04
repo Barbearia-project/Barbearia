@@ -11,7 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Barbearia - Página Inicial</title>
-
+ 
+        <!-- Bootstrap Icons with Integrity -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            
         <!-- Security Headers -->
         <meta http-equiv="Content-Security-Policy"
             content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data:;">
@@ -22,13 +27,7 @@
 
         <!-- Stylesheets with Integrity and Crossorigin -->
         <link rel="stylesheet" href="../Assets/css/Home.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-        <!-- Bootstrap Icons with Integrity -->
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
-            integrity="sha512-..." crossorigin="anonymous">
+        
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="../Assets/img/favcon.avif">
@@ -86,9 +85,11 @@
 
                                 <li class="nav-item">
 
-                                    <a href="agendamento.jsp" class="nav-link">
+                                    <a href="#quem-somos" class="nav-link">
 
-                                        <i class="bi bi-info-circle" aria-hidden="true" !important></i> Quem Somos
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                                          </svg> Quem Somos
 
                                     </a>
 
@@ -96,9 +97,11 @@
 
                                 <li class="nav-item">
 
-                                    <a href="agendamentos.jsp" class="nav-link">
+                                    <a href="agendamento.jsp" class="nav-link">
 
-                                        <i class="bi bi-calendar" aria-hidden="true"></i> Agende um Horário
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                          </svg> Agende um Horário
 
                                     </a>
 
@@ -110,16 +113,31 @@
                                 %>
                                 
                                 <li class="nav-item">
-                                    <a href="conta.jsp" class="nav-link"><i class="bi bi-person" aria-hidden="true"></i> Conta</a>
+                                    <a href="conta.jsp" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                      </svg> Conta</a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a href="../config/logout.jsp" class="nav-link"><i class="bi bi-box-arrow-right"></i> Sair</a>
+                                    <a href="../config/logout.jsp" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                                      </svg> Sair</a>
                                 </li>
                                 <% } else { %>
                                 <li class="nav-item">
-                                    <a href="cadastro.html" class="nav-link"><i class="bi bi-person-plus" aria-hidden="true"></i> Cadastre-se</a>
+                                    <a href="cadastro.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+                                      </svg> Cadastre-se</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a href="login.html" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                      </svg> login</a>
+
                                 <% } %>
 
                             </ul>
@@ -150,7 +168,7 @@
                             loading="lazy">
                         <div class="carousel-caption d-none d-md-block">
                             <div class="logo_carousel"><img src="../Assets/img/logo_header.png"></div>
-                            <a href="caminho/para/agendamento.html" class="btn btn-primary"> Agendar Agora</a>
+                            <a href="agendamento.jsp" class="btn btn-primary"> Agendar Agora</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -158,7 +176,7 @@
                             alt="Pentes de Maquininha" loading="lazy">
                         <div class="carousel-caption d-none d-md-block">
                             <div class="logo_carousel"><img src="../Assets/img/logo_header.png"></div>
-                            <a href="caminho/para/agendamento.html" class="btn btn-primary">Agendar Agora</a>
+                            <a href="agendamento.jsp" class="btn btn-primary">Agendar Agora</a>
                         </div>
                     </div>
                 </div>
@@ -184,32 +202,31 @@
             <img class="about-img" src="../Assets/img/Logo.png">
             
             <div class="about-text-left">
-            
-            <%
-    HttpSession sessao = request.getSession(false); // false para não criar nova sessão
-    if (sessao != null) {
-        String nomeUsuario = (String) sessao.getAttribute("nomeUsuario");
-        String emailUsuario = (String) sessao.getAttribute("emailUsuario");
+
+                <%
+
+                if (sessao != null) {
+                
+                    String nomeUsuario = (String) sessao.getAttribute("nomeUsuario");
+                    String emailUsuario = (String) sessao.getAttribute("emailUsuario");
 
 
-        if (nomeUsuario != null && emailUsuario != null) {
-%>
-            <p>Bem-vindo, <strong><%= nomeUsuario %></strong>!</p>
+                if (nomeUsuario != null && emailUsuario != null) {
+                
+                %>
+                
+                <p>Bem-vindo, <strong><%= nomeUsuario %></strong>!</p>
 
-            
-            
-<%
-        } else {
-%>
-            <p>Sessão não contém informações do usuário.</p>
-<%
-        }
-    } else {
-%>
-    <p>Sessão não encontrada.</p>
-<%
-    }
-%>
+                <%
+                } else {
+                %>
+                <p></p>
+                <%
+                }
+                } else {
+                %>
+                <p></p>   
+                <%}%>   
     
             
                 A Beauty Life Hair é um salão de beleza, fundado em 2015, com o propósito de oferecer uma experiência
