@@ -104,20 +104,23 @@
 
                                 </li>
 
+                                <% 
+                                HttpSession sessao = request.getSession(false); 
+                                if (sessao != null && sessao.getAttribute("nomeUsuario") != null) {
+                                %>
+                                
                                 <li class="nav-item">
-
-                                    <a href="cadastro.html" class="nav-link">
-
-                                        <i class="bi bi-person-plus" aria-hidden="true"></i> Cadastre-se
-
-                                    </a>
-
+                                    <a href="conta.jsp" class="nav-link"><i class="bi bi-person" aria-hidden="true"></i> Conta</a>
                                 </li>
+                                
                                 <li class="nav-item">
-    <a href="../config/logout.jsp" class="nav-link">
-        <i class="bi bi-box-arrow-right"></i> Sair
-    </a>
-</li>
+                                    <a href="../config/logout.jsp" class="nav-link"><i class="bi bi-box-arrow-right"></i> Sair</a>
+                                </li>
+                                <% } else { %>
+                                <li class="nav-item">
+                                    <a href="cadastro.html" class="nav-link"><i class="bi bi-person-plus" aria-hidden="true"></i> Cadastre-se</a>
+                                </li>
+                                <% } %>
 
                             </ul>
 
